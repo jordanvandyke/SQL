@@ -16,21 +16,12 @@ INSERT INTO stationery VALUES (13, "Sticker Sheets", 103, 8, 3.99);
 INSERT INTO stationery VALUES (14, "Trinkets", 25, 4, 9.99);
 INSERT INTO stationery VALUES (15, "Hole Punchers", 7, 4, 7.99);
 
---display the database ordered by price.
+-- display database ordered by price from least to greatest.
 
 SELECT * FROM stationery WHERE price > 1.99 ORDER BY price;
 
---hat is the avg price of items in the bulk section? 
+-- display database quantity grouped by aisle.
 
-SELECT AVG(price) "avg bulk item price"
-FROM store
-where section='bulk'; 
-
---what are the most 5 popular items? 
-SELECT item, price, popularity
-FROM store
-order by popularity desc
-limit 5; 
-
+SELECT aisle, SUM(quantity) FROM stationery GROUP BY aisle;
 
 
