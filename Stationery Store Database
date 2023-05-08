@@ -1,0 +1,36 @@
+CREATE TABLE stationery (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, aisle INTEGER, price INTEGER);
+
+INSERT INTO stationery VALUES (1, "Journals", 57, 7, 14.99);
+INSERT INTO stationery VALUES (2, "Pens", 82, 3, 1.99);
+INSERT INTO stationery VALUES (3, "Pencils", 46, 3, .99);
+INSERT INTO stationery VALUES (4, "Stickers", 78, 8, 2.99);
+INSERT INTO stationery VALUES (5, "Washi Tape", 59, 8, 3.99);
+INSERT INTO stationery VALUES (6, "Glue", 14, 4, 1.99);
+INSERT INTO stationery VALUES (7, "Rinestone Tubs", 20, 4, 7.99);
+INSERT INTO stationery VALUES (8, "Stencils", 31, 5, 1.99);
+INSERT INTO stationery VALUES (9, "Stamps", 31, 5, 4.99);
+INSERT INTO stationery VALUES (10, "Markers", 107, 10, 1.99);
+INSERT INTO stationery VALUES (11, "Sticker Books", 66, 8, 8.99);
+INSERT INTO stationery VALUES (12, "Gel Pens", 93, 3, 2.99);
+INSERT INTO stationery VALUES (13, "Sticker Sheets", 103, 8, 3.99);
+INSERT INTO stationery VALUES (14, "Trinkets", 25, 4, 9.99);
+INSERT INTO stationery VALUES (15, "Hole Punchers", 7, 4, 7.99);
+
+--display the database ordered by price.
+
+SELECT * FROM stationery WHERE price > 1.99 ORDER BY price;
+
+--hat is the avg price of items in the bulk section? 
+
+SELECT AVG(price) "avg bulk item price"
+FROM store
+where section='bulk'; 
+
+--what are the most 5 popular items? 
+SELECT item, price, popularity
+FROM store
+order by popularity desc
+limit 5; 
+
+
+
